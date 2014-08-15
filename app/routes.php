@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', ['as' => 'home', function()
 {
-	return View::make('hello');
-});
+	return View::make('home');
+}]);
+
+Route::resource('players', 'PlayersController');
