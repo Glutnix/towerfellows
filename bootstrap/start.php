@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(function()
 {
 
-    return ( getenv('_LARAVEL_TOWERFELLOWS_ENV') ? getenv('_LARAVEL_TOWERFELLOWS_ENV') : 'local' );
+    return getenv('_LARAVEL_TOWERFELLOWS_ENV') ? : 'local';
 
 });
 
