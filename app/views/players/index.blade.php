@@ -8,7 +8,7 @@
       <div class="col-md-12">
         <h2>Players</h2>
         <ul>
-          @foreach($users as $user)
+          @foreach($players as $user)
             <li>{{ $user->username }}</li>
           @endforeach
         </ul>

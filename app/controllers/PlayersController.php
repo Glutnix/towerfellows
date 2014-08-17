@@ -9,8 +9,8 @@ class PlayersController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::all();
-		return View::make('players.index')->withUsers($users);
+		$players = User::all();
+		return View::make('players.index')->withPlayers($players);
 	}
 
 
