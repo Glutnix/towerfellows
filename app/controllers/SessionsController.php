@@ -1,6 +1,6 @@
 <?php
 
-class PlayersController extends \BaseController {
+class SessionsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -21,7 +21,9 @@ class PlayersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		if (Auth::check()) return Redirect::to('/');
+
+		return View::make('sessions.create');
 	}
 
 
@@ -32,7 +34,13 @@ class PlayersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		if (Auth::attempt(Input::only('email','password')))
+		{
+			return Redirect::route('home');
+		}
+		return Redirect::route('login')->withErrors([
+			'login' => 'Nope, try again.'
+		])->withInput();
 	}
 
 
@@ -78,9 +86,11 @@ class PlayersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy()
 	{
-		//
+		Auth::logout();
+
+		return Redirect::route('login');
 	}
 
 

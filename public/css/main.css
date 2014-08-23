@@ -4,10 +4,29 @@
    Author's custom styles
    ========================================================================== */
 
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.nav-gravatar {
+  height: 16px;
+  margin-top: -5px;
+  margin-right: 0.5em;
+  display:inline-block;
+  vertical-align: top;
+}
 
 
+#nav-sign-in-form {
+  padding: 1em;
+}
 
-
+@media (min-width: 768px) {
+  #nav-sign-in-form {
+    width: 20em;
+  }
+}
 
 
 
